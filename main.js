@@ -57,14 +57,12 @@ function btnOperationClick() {
             inputNumber.innerHTML = result.toLocaleString(undefined, { maximumFractionDigits: 6 }) + " " + this.innerHTML;
 
             secondValue = undefined;
-            console.log(1);
         } else {
             firstValue = parseFloat(inputNumber.innerHTML.replace(/[^0-9.-]/g, ""));
 
             operation = this.innerHTML;
             addOperation = firstValue.toLocaleString(undefined, { maximumFractionDigits: 6 });
             inputNumber.innerHTML = addOperation + " " + this.innerHTML;
-            console.log(2);
         }
 
         inputNumber.style.opacity = "0.5";
