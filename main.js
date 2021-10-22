@@ -57,12 +57,14 @@ function btnOperationClick() {
             inputNumber.innerHTML = result.toLocaleString(undefined, { maximumFractionDigits: 6 }) + " " + this.innerHTML;
 
             secondValue = undefined;
+            console.log(1);
         } else {
             firstValue = parseFloat(inputNumber.innerHTML.replace(/[^0-9.-]/g, ""));
 
             operation = this.innerHTML;
             addOperation = firstValue.toLocaleString(undefined, { maximumFractionDigits: 6 });
             inputNumber.innerHTML = addOperation + " " + this.innerHTML;
+            console.log(2);
         }
 
         inputNumber.style.opacity = "0.5";
@@ -73,7 +75,7 @@ function btnOperationClick() {
 btnEqual.on("click", btnEqualClick)
 
 function btnEqualClick() {
-    if (secondValue != undefined) {
+    if (secondValue != undefined && inputNumber.innerHTML != "") {
         if (operation == "+") {
             result = firstValue + secondValue;
         } else if (operation == "-") {
@@ -84,9 +86,9 @@ function btnEqualClick() {
             result = firstValue / secondValue;
         }
 
-        if (inputNumber.innerHTML != "") {
-            inputNumber.innerHTML = result.toLocaleString(undefined, { maximumFractionDigits: 6 });
-        }
+        inputNumber.innerHTML = result.toLocaleString(undefined, { maximumFractionDigits: 6 });
+        firstValue = undefined;
+        secondValue = undefined;
     }
 }
 
@@ -104,13 +106,12 @@ del.on("click", () => {
 
         if (deleteNum.toString().length != 1 && deleteNum != "NaN") {
             inputNumber.innerHTML = deleteNumber;
-
-            if (secondValue != undefined) {
-                secondValue = parseFloat(inputNumber.innerHTML.replace(/[^0-9.-]/g, ""));
-            }
+            firstValue = undefined;
+            secondValue = undefined;
         } else {
             inputNumber.innerHTML = "";
             firstValue = undefined;
+            secondValue = undefined;
         }
     }
 })
@@ -121,4 +122,6 @@ reset.on("click", () => {
     operation = undefined;
     firstValue = undefined;
     secondValue = undefined;
+    result = undefined;
+    deleteNum = undefined;
 })
