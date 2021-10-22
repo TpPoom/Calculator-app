@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <title>Frontend Mentor | Calculator app</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+
+  <!--------style-------->
+  <link rel="stylesheet" href="./styles.css">
+  <style>
+    .attribution {
+      position: absolute;
+      margin: auto;
+      bottom: -3%;
+      font-size: 11px;
+      text-align: center;
+    }
+
+    .attribution a {
+      color: hsl(228, 45%, 44%);
+    }
+  </style>
+
+  <!--------JQuery-------->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+<body>
+  <div class="pageWrap">
+    <header>
+      <h2>calc</h2>
+      <div class="theme">
+        <h6>theme</h6>
+        <div class="themeSwitch">
+          <h6>123</h6>
+          <input type="range" min="1" max="3" class="switch" id="switch">
+        </div>
+      </div>
+    </header>
+    <div class="screen">
+      <div class="inputNumber" id="inputNumber"></div>
+    </div>
+    </header>
+    <main>
+      <button class="btn num">7</button>
+      <button class="btn num">8</button>
+      <button class="btn num">9</button>
+      <button class="btn" id="del">del</button>
+      <button class="btn num">4</button>
+      <button class="btn num">5</button>
+      <button class="btn num">6</button>
+      <button class="btn operation" id="addition">+</button>
+      <button class="btn num">1</button>
+      <button class="btn num">2</button>
+      <button class="btn num">3</button>
+      <button class="btn operation" id="subtraction">-</button>
+      <button class="btn num" id="point" value=".">.</button>
+      <button class="btn num">0</button>
+      <button class="btn operation" id="division">/</button>
+      <button class="btn operation" id="multiplication">x</button>
+      <button class="btn" id="reset">reset</button>
+      <button class="btn" id="equal">=</button>
+    </main>
+    <div class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+      Coded by <a href="https://www.frontendmentor.io/profile/TpPoom#">TpPoom</a>.
+    </div>
+  </div>
+
+  <!-------script------->
+  <script src="./main.js"></script>
+  <script src="./themes.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,207 @@
+@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@700&display=swap');
+
+:root {
+    --first-background: hsl(222, 26%, 31%);
+    --second-background: hsl(223, 31%, 20%);
+    --screen-background: hsl(224, 36%, 15%);
+
+    --first-key-background: hsl(225, 21%, 49%);
+    --first-key-shadow: hsl(224, 28%, 35%);
+    --second-key-background: hsl(6, 63%, 50%);
+    --second-key-shadow: hsl(6, 70%, 34%);
+    --third-key-background: hsl(30, 25%, 89%);
+    --third-key-shadow: hsl(28, 16%, 65%);
+
+    --first-text: hsl(221, 14%, 31%);
+    --second-text: hsl(0, 0%, 100%);
+    --third-text: hsl(0, 0%, 100%);
+    --fourth-text: hsl(0, 0%, 100%);
+}
+[data-theme="second"] {
+    --first-background: hsl(0, 0%, 90%);
+    --second-background: hsl(0, 5%, 81%);
+    --screen-background: hsl(0, 0%, 93%);
+
+    --first-key-background: hsl(185, 42%, 37%);
+    --first-key-shadow: hsl(185, 58%, 25%);
+    --second-key-background: hsl(25, 98%, 40%);
+    --second-key-shadow: hsl(25, 99%, 27%);
+    --third-key-background: hsl(45, 7%, 89%);
+    --third-key-shadow: hsl(35, 11%, 61%);
+
+    --first-text: hsl(60, 10%, 19%);
+    --second-text: hsl(60, 10%, 19%);
+    --third-text: hsl(0, 0%, 100%);
+    --fourth-text: hsl(0, 0%, 100%);
+}
+[data-theme="third"] {
+    --first-background: hsl(268, 75%, 9%);
+    --second-background: hsl(268, 71%, 12%);
+    --screen-background: hsl(268, 71%, 12%);
+
+    --first-key-background: hsl(281, 89%, 26%);
+    --first-key-shadow: hsl(285, 91%, 52%);
+    --second-key-background: hsl(176, 100%, 44%);
+    --second-key-shadow: hsl(177, 92%, 70%);
+    --third-key-background: hsl(268, 47%, 21%);
+    --third-key-shadow: hsl(290, 70%, 36%);
+
+    --first-text: hsl(52, 100%, 62%);
+    --second-text: hsl(52, 100%, 62%);
+    --third-text: hsl(0, 0%, 100%);
+    --fourth-text: hsl(198, 20%, 13%);
+}
+
+*, :after, :before {
+    box-sizing: border-box;
+    margin: 0;
+    border: 0;
+    font-family: 'Spartan', sans-serif;
+    transition: background-color 1s ease-out, color 1s ease-out, box-shadow 1s ease-out;
+}
+body {
+    font-weight: 700;
+    background-color: var(--first-background);
+}
+.pageWrap {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 38%;
+    display: grid;
+    gap: 1.2em;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+}
+header > h2 {
+    color: var(--second-text);
+    display: inline-block;
+    line-height: 2em;
+}
+.theme {
+    display: inline-block;
+    text-transform: uppercase;
+    vertical-align: right;
+    color: var(--second-text);
+}
+.theme > h6 {
+    display: inline-block;
+    letter-spacing: .1em;
+    position: relative;
+    bottom: .6em;
+}
+.themeSwitch{
+    display: inline-block;
+    width: 4em;
+    margin-left: 1em;
+}
+.themeSwitch > h6 {
+    letter-spacing: 1.18em;
+    padding-left: .95em;
+    height: 100%;
+}
+.switch {
+    -webkit-appearance: none;
+    width: 100%;
+    padding: .35em .45em;
+    margin-top: .2em;
+    border-radius: 2em;
+    background: var(--second-background);
+    transition: .2s;
+    outline: none;
+    cursor: pointer;
+}
+.switch::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 1em;
+    height: 1em;
+    border-radius: 50%;
+    background: var(--second-key-background);
+    transition: .2s;
+}
+
+.screen {
+    background-color: var(--screen-background);
+    width: 100%;
+    border-radius: .5rem;
+    padding: 2em;
+    overflow: auto;
+}
+.inputNumber {
+    content: "";
+    height: 3rem;
+    max-width: 100%;
+    font-size: 3rem;
+    color: var(--second-text);
+    width: 100%;
+    outline: 0;
+    background: none;
+    text-align: end;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+main {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
+    grid-gap: 1.5rem;
+    background-color: var(--second-background);
+    padding: 1.5rem;
+    border-radius: .5rem;
+}
+.btn {
+    background-color: var(--third-key-background);
+    box-shadow: 0 .1em var(--third-key-shadow);
+    color: var(--first-text);
+    font-size: 2rem;
+    text-align: center;
+    padding: .8rem 0;
+    border-radius: .5rem;
+    height: 3.625rem;
+    cursor: pointer;
+}
+#reset {
+    grid-column: 1 / span 2;
+}
+#equal {
+    background-color: var(--second-key-background);
+    box-shadow: 0 .1em var(--second-key-shadow);
+    color: var(--fourth-text);
+    font-size: 1.3rem;
+    grid-column: 3 / span 2;
+    padding: 1.1rem;
+}
+#del, #reset {
+    background-color: var(--first-key-background);
+    box-shadow: 0 .1em var(--first-key-shadow);
+    color: var(--third-text);
+    font-size: 1.3rem;
+    text-transform: uppercase;
+}
+
+/*------------------Mobile------------------*/
+
+@media only screen and (max-width: 800px) {
+    .pageWrap {
+        width: 87.5%;
+        gap: 1.5em;
+    }
+    main {
+        grid-gap: 1rem;
+    }
+    .screen {
+        padding: 1.5em;
+    }
+    .btn {
+        padding: 1rem 0;
+        height: 4rem;
+    }
+    #del, #reset {
+        padding: 1.4rem 0;
+    }
+}
